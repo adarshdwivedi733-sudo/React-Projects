@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND */
+.app {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at 50% 30%, #1f2937, #020617);
+}
+
+/* CARD */
+.card {
+  width: 1000px;
+  height: 520px;
+  border-radius: 30px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+
+  color: white;
+  z-index: 2;
+}
+
+/* TOP */
+.top {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.7;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* LEFT */
+.temp {
+  font-size: 90px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.1; /* IMPORTANT */
+}
+
+.condition {
+  font-size: 22px;
+  margin-top: 12px; /* spacing from temp */
+  display: block;
+  opacity: 0.85;
+}
+
+.details {
+  margin-top: 18px;
+}
+
+.details p {
+  margin: 6px 0;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* CENTER */
+.center img {
+  width: 200px;
+}
+
+/* RIGHT */
+.forecast-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.forecast-card p {
+  margin: 10px 0;
+}
+
+/* GRAPH */
+.graph {
+  margin-top: 30px;
+}
+
+/* SEARCH */
+.search {
+  margin-top: 20px;
+}
+
+.search input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+}
+
+.search button {
+  padding: 12px;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #38bdf8;
+  color: white;
+}
+
+/* 🌧 RAIN */
+.rain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.2) 1px,
+    transparent 1px
+  );
+  background-size: 2px 20px;
+  animation: rain 0.5s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rain {
+  from { transform: translateY(-20px); }
+  to { transform: translateY(20px); }
+}
+
+/* ⚡ LIGHTNING */
+.lightning::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  animation: flash 5s infinite;
+}
+
+@keyframes flash {
+  0%,95%,100% { opacity: 0; }
+  96% { opacity: 0.8; }
+  97% { opacity: 0; }
+  98% { opacity: 0.6; }
+  99% { opacity: 0; }
+}
+
+/* ☁ CLOUDS */
+.clouds {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: url("https://i.ibb.co/7QpKsCX/clouds.png") repeat-x;
+  opacity: 0.1;
+  animation: clouds 60s linear infinite;
+}
+
+@keyframes clouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+
+
